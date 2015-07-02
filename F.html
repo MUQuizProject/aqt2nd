@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="seventhree">
+<head>
+  <meta name="charset" content="utf-8">
+  <title>決勝 University Challenge</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<script type="application/javascript" src="bower_components/angularjs/angular.min.js"></script>
+	<script type="application/javascript" src="js/F/MainF.js"></script>
+</head>
+<body ng-controller="fieldcontroller as fc" ng-keydown="fc.onKeyDown($event)">
+	<div>
+    <h1>決勝 University Challenge Q{{fc.field.qNum}}</h1>
+	</div>
+	<div ng-show="fc.mode === 0">
+		<form>
+			<label>
+				input:
+				<textarea ng-model="fc.inputText"></textarea>
+			</label>
+			<button ng-click="fc.addMemberTemporally()">add a member</button>
+			<button ng-click="fc.mode = 1">
+				Playing mode
+      </button>
+		</form>
+		<p ng-repeat="member in fc.tempMems">
+			<span>{{member.id}}</span>
+			<span>{{member.name}}</span>
+      </p>
+		<form>
+			<button ng-click="fc.confirmMembers()">
+				confirm Members
+			</button>
+			<button ng-click="fc.tempMems = []">
+				delete all Members
+			</button>
+		</form>
+  </div>
+	<div ng-show="fc.mode === 1">
+    <form>
+			<button ng-click="fc.mode = 0">Input Mode</button>
+		</form>
+		<div class="board">
+      <div ng-class="(member.isSelected) ? 'player-s' : 'player'" ng-repeat="member in fc.field.mList">
+				<div class="id">{{member.id}}</div>
+				<div class="name" ng-click="fc.toggleSelected(member)">{{member.name}}</div>
+				<div class="right-{{member.state}}" ng-click="fc.toggleSelected(member)">
+					{{member.right}}
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

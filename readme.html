@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="charset" content="utf-8">
+  
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>得点表示の使い方</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h1 id="基本的な使い方">基本的な使い方</h1>
+<p><strong>index.htmlを開いてください．</strong>そこに各ラウンドの得点表示へのリンクが貼ってあります．</p>
+<h2 id="入力画面">入力画面</h2>
+<p>入力画面には次の4つのボタンと，テキストフィールドがあります．</p>
+<ul>
+<li>add a member: テキストフィールドへの入力に従って，メンバーを追加します．</li>
+<li>Playing mode: 得点表示画面に以降します．</li>
+<li>confirm members: リストアップされたメンバーを登録します．</li>
+<li>delete all Members: メンバーをすべて消去します．</li>
+</ul>
+<h2 id="入力の流れ">入力の流れ</h2>
+<ol style="list-style-type: decimal">
+<li>まず，サンプルで入力されているメンバーをdelete all Membersボタンを押して消してください．</li>
+<li>次に，テキストフィールドに，参加者と名前を1行ごとに，「順位,名前」の形で記述してください．
+<pre>
+(例)
+1,山田太郎
+3,吉田次郎
+14,田中三郎
+</pre>
+</li>
+<li>add a Memberボタンを押すと，メンバーの一覧が表示されます．メンバーが正しいことを確認して下さい．間違いがあれば，delete all Membersボタンを押して参加者を消し，入力を確認して下さい．</li>
+<li>メンバーが正しいことを確認したら，confirm membersボタンを押して，その後Playing modeボタンを押して，得点表示に移ってください．</li>
+</ol>
+<h2 id="操作の原則">操作の原則</h2>
+<ul>
+<li>名前をクリックするとその参加者が選択されます．もう一度クリックすると選択が解除されます．複数人を選択可能です．</li>
+<li>選択されている参加者は，表示の上の部分に白い線がつきます．</li>
+<li>この状態で&quot;o&quot;を押せば正解，&quot;x&quot;を押せば誤答の扱いになります．</li>
+<li>スルーは&quot;t&quot;です．これは問題番号のみを増やします．</li>
+<li>undoは&quot;u&quot;を押してください．</li>
+<li>決勝のみ次の機能がついています．</li>
+<li>ボーナス問題の正解は&quot;b&quot;を押してください．決勝では，&quot;o&quot;を押しても選択状態は解除されないままですので，そのまま&quot;b&quot;を押してもらえば大丈夫です．</li>
+<li>問題番号は&quot;→&quot;を押して進めてください．</li>
+</ul>
+</body>
+</html>

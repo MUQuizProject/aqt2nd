@@ -1,0 +1,26 @@
+{
+    "version": "1.5.0-alpha",
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "!./node_modules/**/*.ts"
+    ],
+    "files": [
+        "./Controller.ts",
+        "./Field.ts",
+        "./Main.ts",
+        "./Member.ts",
+        "./Quiz.ts",
+        "./Undo.ts",
+        "./subwindow.ts"
+    ]
+}

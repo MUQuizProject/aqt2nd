@@ -1,0 +1,89 @@
+$textcolor: #fff;
+$colorlist: #333 #0ff #f0f;
+$player_width: 4rem;
+$player_height: 16rem;
+$id_fontsize: 1.5rem;
+$name_fontsize: 3rem;
+$number_fontsize: 3rem;
+@mixin css3p($property, $value) {
+     @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+          #{$prefix}#{$property}: $value;
+     }
+}
+
+@mixin css3v($property, $value) {
+     @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+          #{$property}: #{$prefix}#{$value};
+     }
+}
+
+body {
+	background: #000;
+}
+
+h1 {
+	color: $textcolor;
+}
+
+label {
+	color: $textcolor;
+}
+
+span {
+	color: $textcolor;
+}
+
+.board {
+	@include css3v(display,flex);
+	@include css3p(flex-direction,row);
+	@include css3p(justify-content,space-around);
+}
+
+.player {
+	width: $player_width;
+	border-style: solid;
+	border-color: #000;
+	border-width: 0.2rem;
+}
+
+.player-s {
+	width: $player_width;
+	border-style: solid;
+	border-color: #fff #000 #000 #000;
+	border-width: 0.2rem;
+}
+
+.id {
+	text-align: center;
+	font-size: $id_fontsize;
+	line-height: $player_width;
+	color: $textcolor;
+}
+
+.name {
+	@include css3p(writing-mode,vertical-rl);
+	font-size: $name_fontsize;
+	line-height: $player_width;
+	height: $player_height;
+	color: $textcolor;
+}
+
+@each $type in 0,1,2 {
+	.right-#{$type} {
+		width: $player_width;
+		height: $player_width;
+		text-align: center;
+		font-size: $number_fontsize;
+		background-color: nth($colorlist,$type+1);
+		color: #000;
+		border-radius: $player_width/2;
+		line-height: $player_width;
+	}
+}
+
+.misses {
+	font-size: $id_fontsize;
+	text-align: center;
+	color: $textcolor;
+	line-height: $player_width;
+}

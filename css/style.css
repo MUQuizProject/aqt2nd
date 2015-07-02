@@ -1,0 +1,93 @@
+body {
+  background: #000; }
+
+h1 {
+  color: #fff; }
+
+label {
+  color: #fff; }
+
+span {
+  color: #fff; }
+
+.board {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
+  -o-justify-content: space-around;
+  justify-content: space-around; }
+
+.player {
+  width: 4rem;
+  border-style: solid;
+  border-color: #000;
+  border-width: 0.2rem; }
+
+.player-s {
+  width: 4rem;
+  border-style: solid;
+  border-color: #fff #000 #000 #000;
+  border-width: 0.2rem; }
+
+.id {
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 4rem;
+  color: #fff; }
+
+.name {
+  -webkit-writing-mode: vertical-rl;
+  -moz-writing-mode: vertical-rl;
+  -ms-writing-mode: vertical-rl;
+  -o-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+  font-size: 3rem;
+  line-height: 4rem;
+  height: 16rem;
+  color: #fff; }
+
+.right-0 {
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  font-size: 3rem;
+  background-color: #333;
+  color: #000;
+  border-radius: 2rem;
+  line-height: 4rem; }
+
+.right-1 {
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  font-size: 3rem;
+  background-color: #0ff;
+  color: #000;
+  border-radius: 2rem;
+  line-height: 4rem; }
+
+.right-2 {
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  font-size: 3rem;
+  background-color: #f0f;
+  color: #000;
+  border-radius: 2rem;
+  line-height: 4rem; }
+
+.misses {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #fff;
+  line-height: 4rem; }
