@@ -9,15 +9,26 @@
 </head>
 <body ng-controller="fieldcontroller as fc" ng-keydown="fc.onKeyDown($event)">
 	<div>
-    <h1>3R 5○3×クイズ　Q{{fc.field.qNum}}</h1>
+    <h1>3R {{fc.field.win_border}}○{{fc.field.lose_border}}×クイズ　Q{{fc.field.qNum}}</h1>
 	</div>
 	<div ng-show="fc.mode === 0">
+		<form>
+			<label>
+				勝ち抜けボーダー:
+				<textarea ng-model="fc.winBText"></textarea>
+			</label>
+			<label>
+				失格ボーダー:
+				<textarea ng-model="fc.loseBText"></textarea>
+			</label>
+			<button ng-click="fc.changeBorder()">ボーダー変更</button>
+		</form>
 		<form>
 			<label>
 				input:
 				<textarea ng-model="fc.inputText"></textarea>
 			</label>
-			<button ng-click="fc.addMemberTemporally()">add a member</button>
+			<button ng-click="fc.addMemberTemporally()">メンバーを参加者一覧に追加</button>
 			<button ng-click="fc.mode = 1">
 				Playing mode
 			</button>
@@ -28,10 +39,10 @@
 		</p>
 		<form>
 			<button ng-click="fc.confirmMembers()">
-				confirm Members
+				参加者を登録
 			</button>
 			<button ng-click="fc.tempMems = []">
-				delete all Members
+				参加者一覧の削除
 			</button>
 		</form>
 	</div>

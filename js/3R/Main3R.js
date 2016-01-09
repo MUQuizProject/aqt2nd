@@ -83,6 +83,10 @@ var SevenThree;
             Field.prototype.addMember = function (m) { this.mList.push(m); };
             //参加者をリセット
             Field.prototype.resetMembers = function () { this.mList = []; };
+            //勝ち抜けボーダーの変更
+            Field.prototype.changeWinBorder = function (n) { this.win_border = n; };
+            //失格ボーダーの変更
+            Field.prototype.changeLoseBorder = function (n) { this.lose_border = n; };
             //idで指定された参加者の選択状態をトグルする
             Field.prototype.toggleSelected = function (id) {
                 for (var i = 0; i < this.mList.length; ++i) {
@@ -192,6 +196,10 @@ var SevenThree;
             this.tempMems = [new Member("武田信玄", 1), new Member("上杉謙信", 2), new Member("石田三成", 3), new Member("豊臣秀吉", 4), new Member("織田信長", 5), new Member("明智光秀", 6)];
             this.mode = Mode.Input;
         }
+        Controller.prototype.changeBorder = function () {
+            this.field.changeWinBorder(parseInt(this.winBText));
+            this.field.changeLoseBorder(parseInt(this.loseBText));
+        };
         Controller.prototype.addMemberTemporally = function () {
             var byLine = this.inputText.split("\n");
             for (var i = 0; i < byLine.length; i++) {

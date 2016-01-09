@@ -18,6 +18,8 @@ module SevenThree {
     idtext: string;
 	  name: string;
 	  inputText: string;
+    winBText: string;
+    loseBText: string;
 	  field: Field;
     mode: Mode;
     tempMems: Member[];
@@ -26,6 +28,11 @@ module SevenThree {
       this.field = new Field(5,3);
       this.tempMems = [new Member("武田信玄",1),new Member("上杉謙信",2),new Member("石田三成",3),new Member("豊臣秀吉",4),new Member("織田信長",5),new Member("明智光秀",6)];
       this.mode = Mode.Input;
+    }
+
+    changeBorder(): void {
+      this.field.changeWinBorder(parseInt(this.winBText));
+      this.field.changeLoseBorder(parseInt(this.loseBText));
     }
 
     addMemberTemporally(): void {

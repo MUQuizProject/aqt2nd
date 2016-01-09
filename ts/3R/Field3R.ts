@@ -13,13 +13,13 @@ module SevenThree.Model {
 	//問題番号
 	qNum: number;
 	uStack: Undo;
-  win_border: number;
-  lose_border: number;
+  	win_border: number;
+  	lose_border: number;
 
 	constructor(win_border: number,lose_border: number){
-	    this.mList = [];
-	    this.qNum = 1;
-	    this.uStack = new Undo();
+	  this.mList = [];
+	  this.qNum = 1;
+	  this.uStack = new Undo();
       this.win_border = win_border;
       this.lose_border = lose_border;
 	}
@@ -27,6 +27,10 @@ module SevenThree.Model {
 	addMember(m: Member): void {this.mList.push(m);}
 	//参加者をリセット
 	resetMembers(): void {this.mList = [];}
+	//勝ち抜けボーダーの変更
+	changeWinBorder(n: number): void { this.win_border = n; }
+	//失格ボーダーの変更
+	changeLoseBorder(n: number): void { this.lose_border = n; }
 
 	//idで指定された参加者の選択状態をトグルする
 	toggleSelected(id: number): void {
